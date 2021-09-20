@@ -1,0 +1,28 @@
+#Variables
+
+$student_name=jose
+
+$rg_name="${student_name}-cli-scripting-rg"
+
+
+
+# -- VM
+
+$vm_name="${student_name}-cli-scripting-vm"
+
+$vm_admin_username=student
+
+$vm_admin_password='LaunchCode-@zure1'
+
+$vm_size=Standard_B2s
+
+$vm_image=$(az vm image list --query "[? contains(urn, 'Ubuntu')] | [0].urn" -o tsv)
+
+
+# -- KV
+
+$kv_name="${student_name}-cli-scripting-kv"
+
+$kv_secret_name='ConnectionStrings--Default'
+
+$kv_secret_value='server=localhost;port=3306;database=coding_events;user=coding_events;password=launchcode'
